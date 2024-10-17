@@ -6,12 +6,21 @@ const Features = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/public/features.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setFeatures(data?.features);
+    const fetchedData = async () => {
+      try {
+        const response = await fetch("/public/features.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch features");
+        }
+        const data = await response.json();
+        setFeatures(data.features);
         setLoading(false);
-      });
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
+    fetchedData();
   }, []);
   return (
     <div>
