@@ -3,32 +3,74 @@
       {
         "id": 1,
         "title": "Easy Appointment Scheduling",
-        "description": "Schedule appointments with other users easily with just a few clicks."
+        "description": "Schedule appointments with other users easily with just a few clicks.",
+        "appointmentDetails": {
+          "date": "2024-10-20",
+          "time": "10:00 AM",
+          "name": "John Doe",
+          "email": "johndoe@example.com",
+          "phone": "123-456-7890"
+        }
       },
       {
         "id": 2,
         "title": "Manage Your Schedule",
-        "description": "View, accept, or decline appointments and manage your schedule efficiently."
+        "description": "View, accept, or decline appointments and manage your schedule efficiently.",
+        "appointmentDetails": {
+          "date": "2024-10-21",
+          "time": "2:00 PM",
+          "name": "Jane Smith",
+          "email": "janesmith@example.com",
+          "phone": "987-654-3210"
+        }
       },
       {
         "id": 3,
         "title": "Responsive Design",
-        "description": "Use the application on any device with a fully responsive and user-friendly design."
+        "description": "Use the application on any device with a fully responsive and user-friendly design.",
+        "appointmentDetails": {
+          "date": "2024-10-22",
+          "time": "1:00 PM",
+          "name": "Alice Johnson",
+          "email": "alicejohnson@example.com",
+          "phone": "555-123-4567"
+        }
       },
       {
         "id": 4,
         "title": "Secure Payments",
-        "description": "Make secure and hassle-free payments for all transactions in the platform."
+        "description": "Make secure and hassle-free payments for all transactions in the platform.",
+        "appointmentDetails": {
+          "date": "2024-10-23",
+          "time": "3:00 PM",
+          "name": "Bob Brown",
+          "email": "bobbrown@example.com",
+          "phone": "444-987-6543"
+        }
       },
       {
         "id": 5,
         "title": "24/7 Support",
-        "description": "Access our dedicated customer support team anytime for any assistance."
+        "description": "Access our dedicated customer support team anytime for any assistance.",
+        "appointmentDetails": {
+          "date": "2024-10-24",
+          "time": "9:00 AM",
+          "name": "Charlie Green",
+          "email": "charliegreen@example.com",
+          "phone": "333-456-7890"
+        }
       },
       {
         "id": 6,
         "title": "Real-time Notifications",
-        "description": "Get instant notifications for any important activity or messages."
+        "description": "Get instant notifications for any important activity or messages.",
+        "appointmentDetails": {
+          "date": "2024-10-25",
+          "time": "11:00 AM",
+          "name": "Diana Prince",
+          "email": "dianaprince@example.com",
+          "phone": "222-345-6789"
+        }
       }
     ]
   }
