@@ -1,0 +1,35 @@
+{
+    "features": [
+      {
+        "id": 1,
+        "title": "Easy Appointment Scheduling",
+        "description": "Schedule appointments with other users easily with just a few clicks."
+      },
+      {
+        "id": 2,
+        "title": "Manage Your Schedule",
+        "description": "View, accept, or decline appointments and manage your schedule efficiently."
+      },
+      {
+        "id": 3,
+        "title": "Responsive Design",
+        "description": "Use the application on any device with a fully responsive and user-friendly design."
+      },
+      {
+        "id": 4,
+        "title": "Secure Payments",
+        "description": "Make secure and hassle-free payments for all transactions in the platform."
+      },
+      {
+        "id": 5,
+        "title": "24/7 Support",
+        "description": "Access our dedicated customer support team anytime for any assistance."
+      },
+      {
+        "id": 6,
+        "title": "Real-time Notifications",
+        "description": "Get instant notifications for any important activity or messages."
+      }
+    ]
+  }
+  
