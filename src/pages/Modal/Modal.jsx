@@ -24,7 +24,7 @@ const Modal = ({ isOpen, onClose, onSubmit }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+      <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
         <h3 className="text-xl font-bold mb-4">Schedule an Appointment</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

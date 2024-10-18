@@ -8,6 +8,7 @@ import Main from "./layouts/Main.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +36,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    
     <RouterProvider router={router} />
+   
+    
   </StrictMode>
 );
