@@ -53,7 +53,7 @@ const ScheduleAppointment = ({ targetUserId }) => {
 
   return (
     <form onSubmit={handleSchedule} className="p-6 bg-white shadow-lg rounded-lg max-w-md mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-6 text-center">Schedule an Appointment</h2>
+      <h2 className="md:text-2xl font-bold mb-6 text-center">Schedule an Appointment</h2>
       <div className="mb-4">
         <input 
           type="text" 
@@ -94,7 +94,7 @@ const ScheduleAppointment = ({ targetUserId }) => {
       </div>
       <button 
         type="submit" 
-        className={`w-full py-3 rounded-lg ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'} text-white focus:outline-none focus:ring-2 focus:ring-green-400 transition-all`}
+        className={`w-full py-3 rounded-lg ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'} text-white focus:outline-none focus:ring-2 focus:ring-green-400 transition-all`}
         disabled={loading}
       >
         {loading ? 'Scheduling...' : 'Schedule Appointment'}
