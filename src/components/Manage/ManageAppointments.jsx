@@ -9,8 +9,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase/firebase.init";
 import { getAuth } from "firebase/auth";
-import { toast } from "react-toastify"; 
-import "react-toastify/dist/ReactToastify.css"; 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ManageAppointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -84,7 +84,9 @@ const ManageAppointments = () => {
       await updateDoc(doc(db, "appointments", id), { status: "accepted" });
       setAppointments((prev) =>
         prev.map((appointment) =>
-          appointment.id === id ? { ...appointment, status: "accepted" } : appointment
+          appointment.id === id
+            ? { ...appointment, status: "accepted" }
+            : appointment
         )
       );
       toast.success("Appointment accepted successfully!");
@@ -94,12 +96,14 @@ const ManageAppointments = () => {
   };
 
   const handleDecline = async (id) => {
-    console.log("Declining appointment with id:", id); 
+    console.log("Declining appointment with id:", id);
     try {
       await updateDoc(doc(db, "appointments", id), { status: "declined" });
       setAppointments((prev) =>
         prev.map((appointment) =>
-          appointment.id === id ? { ...appointment, status: "declined" } : appointment
+          appointment.id === id
+            ? { ...appointment, status: "declined" }
+            : appointment
         )
       );
       toast.success("Appointment declined successfully!");
@@ -135,38 +139,41 @@ const ManageAppointments = () => {
       {filteredAppointments.length === 0 ? (
         <p className="text-red-500">No appointments found.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAppointments.map((appointment) => (
             <div
               key={appointment.id}
-              className="p-4 border rounded-lg shadow-md bg-white"
+              className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105 hover:shadow-xl"
             >
-              <h3 className="font-semibold text-lg">{appointment.title}</h3>
-              <p>{appointment.description}</p>
-              <p>
-                Date:{" "}
+              <h3 className="font-semibold text-xl text-blue-600 mb-2">
+                {appointment.title}
+              </h3>
+              <p className="text-gray-700">{appointment.description}</p>
+              <p className="text-gray-600 mt-2">
+                <span className="font-bold">Date:</span>{" "}
                 {new Date(appointment.date.seconds * 1000).toLocaleDateString()}
                 <br />
-                Time: {appointment.time}
+                <span className="font-bold">Time:</span> {appointment.time}
                 <br />
-                Scheduled with User ID: {appointment.targetUserId}
+                <span className="font-bold">Scheduled with User ID:</span>{" "}
+                {appointment.targetUserId}
               </p>
               <div className="flex justify-between mt-4">
                 <button
                   onClick={() => handleAccept(appointment.id)}
-                  className="bg-blue-500 text-white px-2 py-1 rounded"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out shadow-md hover:shadow-lg"
                 >
                   Accept
                 </button>
                 <button
                   onClick={() => handleDecline(appointment.id)}
-                  className="bg-red-500 text-white px-2 py-1 rounded"
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out shadow-md hover:shadow-lg"
                 >
                   Decline
                 </button>
                 <button
                   onClick={() => handleCancel(appointment.id)}
-                  className="bg-gray-400 text-white px-2 py-1 rounded"
+                  className="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-200 ease-in-out shadow-md hover:shadow-lg"
                 >
                   Cancel
                 </button>

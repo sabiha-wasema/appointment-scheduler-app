@@ -2,7 +2,7 @@ import { useState } from "react";
 import ManageAppointments from "./components/Manage/ManageAppointments";
 import ScheduleAppointment from "./components/Schedule/SheduleAppointment";
 import UserSearch from "./components/Users/UserSearch";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 function App() {
   const [selectedUserId, setSelectedUserId] = useState(null);
 
