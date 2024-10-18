@@ -78,7 +78,7 @@ const UserSearch = ({ onUserSelect }) => {
         </div>
       ) : (
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
             {filteredUsers.map((user) => (
               <div
                 key={user.id}
@@ -86,11 +86,11 @@ const UserSearch = ({ onUserSelect }) => {
                 onClick={() => onUserSelect(user.id)}
               >
                 <h3 className="text-lg font-semibold">{user.username}</h3>
-                <p className="text-gray-600">{user.email}</p>
+                <p className="text-gray-600 md:text-sm">{user.email}</p>
               </div>
             ))}
           </div>
-          <div className="flex justify-center w-[20%] mt-10 rounded-lg mx-auto py-2 items-center bg-blue-500 text-white">
+          <div className="flex justify-center w-50 mt-10 rounded-lg mx-auto py-2 items-center bg-blue-500 text-white">
             {filteredUsers.length !== 0 && (
               <button
                 onClick={() => setSearchTerm("")}

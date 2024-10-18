@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-500 to-teal-500">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-500 to-teal-500 p-4">
       <ToastContainer /> 
       <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Login to Your Account</h2>
