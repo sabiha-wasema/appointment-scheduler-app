@@ -1,11 +1,7 @@
-import Features from "./Features/Features";
-import HeroSection from "./HeroSection/HeroSection";
-
 const Home = () => {
   return (
     <div>
-      <HeroSection/>
-      <Features/>
+      <h1>This is home</h1>
     </div>
   );
 };
