@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { db } from '../../firebase/firebase.init';
 import { collection, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const ScheduleAppointment = ({ targetUserId }) => {
   const [title, setTitle] = useState('');
@@ -15,12 +17,10 @@ const ScheduleAppointment = ({ targetUserId }) => {
 
     const auth = getAuth();
     const user = auth.currentUser;
-
-    console.log("Current User ID:", user ? user.uid : "No user logged in");
     const currentUserId = user ? user.uid : null;
 
     if (!currentUserId) {
-      alert('You must be logged in to schedule an appointment');
+      toast.error('You must be logged in to schedule an appointment');
       return;
     }
 
@@ -32,20 +32,23 @@ const ScheduleAppointment = ({ targetUserId }) => {
         description,
         date,
         time,
-        userId: currentUserId, 
-        targetUserId,          
+        userId: currentUserId,
+        targetUserId,
       });
-      alert('Appointment scheduled successfully!');
-      setTitle('');
-      setDescription('');
-      setDate('');
-      setTime('');
+      toast.success('Appointment scheduled successfully!');
+      resetForm();
     } catch (error) {
-      console.error('Error scheduling appointment:', error); 
-      alert('Error scheduling appointment: ' + error.message);
+      toast.error('Error scheduling appointment: ' + error.message);
     } finally {
       setLoading(false);
     }
+  };
+
+  const resetForm = () => {
+    setTitle('');
+    setDescription('');
+    setDate('');
+    setTime('');
   };
 
   return (

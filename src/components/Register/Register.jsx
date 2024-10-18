@@ -26,7 +26,7 @@ const Register = () => {
       // Show success toast and redirect to login page
       toast.success('User registered successfully! Redirecting to login...', {
         position: "top-right",
-        autoClose: 2000, // 2 seconds
+        autoClose: 2000,
         hideProgressBar: true,
         onClose: () => navigate('/login'),
       });
