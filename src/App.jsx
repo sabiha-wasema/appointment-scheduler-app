@@ -19,7 +19,7 @@ function App() {
         <UserSearch onUserSelect={handleUserSelect} />
         {selectedUserId && <ScheduleAppointment targetUserId={selectedUserId} />}
       </div>
-      <div className="w-full max-w-4xl mt-8">
+      <div className="w-full max-w-6xl mt-8">
         <ManageAppointments />
       </div>
     </div>

@@ -119,7 +119,7 @@ const ManageAppointments = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 p-4">
-      <h2 className="text-2xl font-bold mb-4">My Appointments</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-4">My Appointments</h2>
       <input
         type="text"
         placeholder="Search by title..."
@@ -139,41 +139,52 @@ const ManageAppointments = () => {
       {filteredAppointments.length === 0 ? (
         <p className="text-red-500">No appointments found.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredAppointments.map((appointment) => (
             <div
               key={appointment.id}
               className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105 hover:shadow-xl"
             >
-              <h3 className="font-semibold text-xl text-blue-600 mb-2">
+              <h3 className="font-semibold text-xl sm:text-2xl text-blue-600 mb-2">
                 {appointment.title}
               </h3>
               <p className="text-gray-700">{appointment.description}</p>
-              <p className="text-gray-600 mt-2">
+              <p className="text-gray-600 mt-2 text-[13px] sm:text-[14px] md:text-[16px]">
                 <span className="font-bold">Date:</span>{" "}
-                {new Date(appointment.date.seconds * 1000).toLocaleDateString()}
+                {appointment.date
+                  ? new Date(appointment.date).toLocaleDateString()
+                  : "No Date Available"}
                 <br />
-                <span className="font-bold">Time:</span> {appointment.time}
+                <span className="font-bold">Time:</span>{" "}
+                {appointment.time
+                  ? new Date(
+                      `1970-01-01T${appointment.time}`
+                    ).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true,
+                    })
+                  : "Invalid Time"}
                 <br />
-                <span className="font-bold">Scheduled with User ID:</span>{" "}
+                <span className="font-bold ">Scheduled with User ID:</span>{" "}
                 {appointment.targetUserId}
               </p>
-              <div className="flex justify-between mt-4">
+              <div className="flex justify-between flex-wrap mt-4">
                 <button
                   onClick={() => handleAccept(appointment.id)}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out shadow-md hover:shadow-lg"
+                  className="bg-blue-500 text-white px-4 py-2 mb-2 rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out shadow-md hover:shadow-lg w-full sm:w-auto"
                 >
                   Accept
                 </button>
                 <button
                   onClick={() => handleDecline(appointment.id)}
-                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out shadow-md hover:shadow-lg"
+                  className="bg-red-500 text-white px-4 py-2 mb-2 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out shadow-md hover:shadow-lg w-full sm:w-auto"
                 >
                   Decline
                 </button>
                 <button
                   onClick={() => handleCancel(appointment.id)}
-                  className="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-200 ease-in-out shadow-md hover:shadow-lg"
+                  className="bg-gray-400 text-white px-4 py-2 mb-2 rounded-lg hover:bg-gray-500 transition duration-200 ease-in-out shadow-md hover:shadow-lg w-full sm:w-auto"
                 >
                   Cancel
                 </button>
