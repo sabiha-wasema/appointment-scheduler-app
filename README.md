@@ -42,7 +42,7 @@ This is an appointment scheduler application developed using React, allowing use
 ## Set up Firebase:
 - Create a project on Firebase Console
 - Get your configuration keys.
-- Add your Firebase configuration in the src/services/firebaseConfig.js file.
+- Add your Firebase configuration in the src/firebase/firebase.init.js file.
 
 ## Run the application:
     npm run dev
